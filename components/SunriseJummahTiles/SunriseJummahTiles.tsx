@@ -1,5 +1,6 @@
 import { JummahTimes } from "@/types/JummahTimesType"
 import moment from "moment"
+import { translations } from "@/constants/translations"
 
 export default function SunriseJummahTiles({
   sunrise,
@@ -15,7 +16,7 @@ export default function SunriseJummahTiles({
       } text-center gap-0 md:gap-3`}
     >
       <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 lg:col-auto">
-        <dt className="text-sm lg:text-2xl font-medium">Sunrise</dt>
+        <dt className="text-sm lg:text-2xl font-medium">{translations.prayers.sunrise}</dt>
         <dd className="mt-1 text-xl lg:text-5xl font-bold tracking-tight">
           {moment(sunrise, ["HH:mm"]).format("h:mm")}
         </dd>

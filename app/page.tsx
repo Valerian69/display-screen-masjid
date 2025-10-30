@@ -23,17 +23,19 @@ import type { JummahTimes } from "@/types/JummahTimesType"
 import type { MosqueMetadataType } from "@/types/MosqueDataType"
 import type { Metadata } from "next"
 import UpcomingPrayerDayTiles from "@/components/UpcomingPrayerDayTiles/UpcomingPrayerDayTiles"
+import { translations } from "@/constants/translations"
 
 export async function generateMetadata(): Promise<Metadata> {
   const mosqueMetadata: MosqueMetadataType = await getMetaData()
 
   return {
-    title: `${mosqueMetadata.name} Prayer Times | MosqueScreen Project by MosqueOS`,
-    description: `${mosqueMetadata.address} | ${mosqueMetadata.name} | MosqueScreen Project by MosqueOS`,
+    title: `${mosqueMetadata.name} ${translations.labels.prayerTimes} | ${translations.meta.title}`,
+    description: `${mosqueMetadata.address} | ${mosqueMetadata.name} | ${translations.meta.description}`,
   }
 }
 
 export default async function Home() {
+  // Fixed missing key prop warning
   const today: DailyPrayerTime = await getPrayerTimesForToday()
   const tomorrow: DailyPrayerTime = await getPrayerTimesForTomorrow()
   const jummahTimes: JummahTimes = await getJummahTimes()
@@ -47,11 +49,10 @@ export default async function Home() {
       jummahTimes={jummahTimes}
       key={"sunrise_jummah_times"}
     />,
+    ...upcomingPrayerDays.map((times, index) => (
+      <UpcomingPrayerDayTiles times={times} key={`upcoming_${index}`} />
+    )),
   ]
-
-  upcomingPrayerDays.forEach((times) => {
-    slides.push(<UpcomingPrayerDayTiles times={times} />)
-  })
 
   return (
     <>

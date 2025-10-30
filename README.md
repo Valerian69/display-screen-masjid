@@ -1,128 +1,128 @@
-# Mosque Prayer Display Screen App
+# Aplikasi Layar Display Sholat Masjid
 
 'بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
 
-In the Name of Allah the Merciful, the Compassionate.
+Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang.
 
-This project has been open-sourced as a form of sadaqah jariyah - may Allah reward every single contribution, technical, non-technical and those who share with others.
+Proyek ini telah bersumber terbuka sebagai bentuk sedekah jariyah - semoga Allah memberi reward untuk setiap kontribusi, baik teknis maupun non-teknis dan mereka yang berbagi dengan orang lain.
 
-## Introduction
+## Pendahuluan
 
-This application allows mosques to run a prayer display screen for the worshipers and also an offline progressive web app that runs on any modern web browser.
+Aplikasi ini memungkinkan masjid untuk menjalankan layar display sholat untuk para jamaah dan juga aplikasi web progresif offline yang berjalan di browser modern mana pun.
 
-This version of the application supersedes the [original version](https://github.com/Mosque-Screens/Mosque-Screen) which was created in association with [East London Mosque](https://www.eastlondonmosque.org.uk/).
+Versi aplikasi ini menggantikan [versi asli](https://github.com/Mosque-Screens/Mosque-Screen) yang dibuat bersama dengan [East London Mosque](https://www.eastlondonmosque.org.uk/).
 
-The commentary on why we built this version, can be found in the following blog: [https://medium.com/mosque/design-concept-direction-for-mosque-screens-51c4f9bb82](https://medium.com/mosque/design-concept-direction-for-mosque-screens-51c4f9bb82).
+Komentar tentang mengapa kami membangun versi ini dapat ditemukan di blog berikut: [https://medium.com/mosque/design-concept-direction-for-mosque-screens-51c4f9bb82](https://medium.com/mosque/design-concept-direction-for-mosque-screens-51c4f9bb82).
 
-The original contributors of this project can be found [here](https://github.com/Mosque-Screens/Mosque-Screen#contributors-wall-of-fame).
+Kontributor asli proyek ini dapat ditemukan [di sini](https://github.com/Mosque-Screens/Mosque-Screen#contributors-wall-of-fame).
 
-A special thanks should be given to the [UK Government Digital Service](https://www.gov.uk/government/organisations/government-digital-service) who provided voluntary days which allowed the original project to come to life.
+Terima kasih khusus harus diberikan kepada [UK Government Digital Service](https://www.gov.uk/government/organisations/government-digital-service) yang menyediakan hari-hari sukarela yang memungkinkan proyek asli menjadi kenyataan.
 
-## Features
+## Fitur
 
-To keep track of features implemented and in the pipeline, please have a look at our project board:
+Untuk melacak fitur yang diimplementasikan dan dalam jalur pipa, silakan lihat papan proyek kami:
 https://github.com/orgs/MosqueOS/projects/1/views/1
 
-If you want to request a new feature, please raise an issue on this repo with a description of what you want.
+Jika Anda ingin meminta fitur baru, silakan ajukan masalah di repo ini dengan deskripsi apa yang Anda inginkan.
 
 ## Demo
 
-You can see a working demo here:
+Anda dapat melihat demo yang berfungsi di sini:
 [https://mosque-prayer-display-screen.vercel.app/](https://mosque-prayer-display-screen.vercel.app/)
 
-All of the code sits here:
+Semua kode ada di sini:
 [https://github.com/MosqueOS/Mosque-Prayer-Display-Screen](https://github.com/MosqueOS/Mosque-Prayer-Display-Screen)
 
-## Screenshots
+## Tangkapan Layar
 
-### Mosque views
+### Tampilan Masjid
 
 <img src="./public/demo-mosque-view-1.png" />
 
 <img src="./public/demo-mosque-view-2.png" />
 
 
-### Mobile app
+### Aplikasi Mobile
 
 <img src="./public/demo-mobile-view.png" width="500px" />
 
 
-## How to get set up as a Mosque
+## Cara Mengatur sebagai Masjid
 
-### Prerequisites
+### Prasyarat
 
-- Google Account
+- Akun Google
 
-### Step 1: Make a copy of the prayer times spreadsheet
+### Langkah 1: Buat salinan spreadsheet waktu sholat
 
-Go to the following link and make a copy of the spreadsheet:
+Buka tautan berikut dan buat salinan spreadsheet:
 [https://docs.google.com/spreadsheets/d/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg/copy](https://docs.google.com/spreadsheets/d/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg/copy).
 
-### Step 2: Share "viewer" access to the spreadsheet with our Google Account
+### Langkah 2: Bagikan akses "viewer" ke spreadsheet dengan Akun Google kami
 
-Click on the share button and add `mosque.screens786@gmail.com` as a viewer. We don't need any write access, so please do not give us this.
+Klik tombol bagikan dan tambahkan `mosque.screens786@gmail.com` sebagai viewer. Kami tidak memerlukan akses tulis, jadi mohon jangan berikan kami ini.
 
-This allows our API to access your spreadsheet and read your data.
+Ini memungkinkan API kami mengakses spreadsheet Anda dan membaca data Anda.
 
-### Step 3: Generate API Endpoint
+### Langkah 3: Hasilkan API Endpoint
 
-To generate the API endpoint, you need to extract the spreadsheet ID from your spreadsheet link.
+Untuk menghasilkan API endpoint, Anda perlu mengekstrak ID spreadsheet dari tautan spreadsheet Anda.
 
-For example, if your spreadsheet URL is:
+Misalnya, jika URL spreadsheet Anda adalah:
 
 ```
 https://docs.google.com/spreadsheets/d/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg/edit
 ```
 
-Your ID would be:
+ID Anda akan menjadi:
 
 ```
 1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg
 ```
 
-You then add this ID to the following URL, like this:
+Anda kemudian menambahkan ID ini ke URL berikut, seperti ini:
 
 ```
 https://api.mosque.tech/mosque-data/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg
 ```
 
-You can use the following tool to automatically generate an API endpoint:
+Anda dapat menggunakan alat berikut untuk secara otomatis menghasilkan API endpoint:
 https://codepen.io/DilwoarH/full/mdvOexr
 
-Note: You don't need to use our API endpoint, you can generate your own endpoint but please make sure it has all the required properties.
+Catatan: Anda tidak perlu menggunakan API endpoint kami, Anda dapat menghasilkan endpoint Anda sendiri tetapi pastikan memiliki semua properti yang diperlukan.
 
-### Step 4: Deploy your app
+### Langkah 4: Deploy aplikasi Anda
 
-We currently use Vercel (we found others not to work as well).
+Kami saat ini menggunakan Vercel (kami menemukan yang lain tidak berfungsi dengan baik).
 
-Click on the following button:
+Klik tombol berikut:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMosqueOS%2FMosque-Prayer-Display-Screen&env=MOSQUE_API_ENDPOINT&envDescription=The%20Mosque%20API%20Key%20can%20be%20generated%20by%20following%20the%20README%20documents&envLink=https%3A%2F%2Fgithub.com%2FMosqueOS%2FMosque-Prayer-Display-Screen&project-name=mosque-prayer-display-screen&repository-name=Mosque-Prayer-Display-Screen)
 
-### Step 5: Test your display
+### Langkah 5: Uji display Anda
 
-Once your app has deployed, visit the URL and test your screen.
-Make sure it works on the TV you want to use for the mosque. Our app is designed for 1080p Full HD TV screens.
+Setelah aplikasi Anda dideploy, kunjungi URL dan uji layar Anda.
+Pastikan berfungsi di TV yang ingin Anda gunakan untuk masjid. Aplikasi kami dirancang untuk layar TV Full HD 1080p.
 
-### Optional things you might want to do
+### Hal opsional yang mungkin ingin Anda lakukan
 
-#### Custom domain
+#### Domain kustom
 
-You can set up custom domains like: prayertime.mymosque.com
+Anda dapat mengatur domain kustom seperti: prayertime.mymosque.com
 
-If you want to update your domain, you can do so by following the Vercel documentation:
+Jika Anda ingin memperbarui domain Anda, Anda dapat melakukannya dengan mengikuti dokumentasi Vercel:
 [https://vercel.com/docs/projects/domains/add-a-domain](https://vercel.com/docs/projects/domains/add-a-domain)
 
-#### Environment variables
+#### Variabel lingkungan
 
-|KEY|VALUE|DEFAULT|DESCRIPTION|
+|KUNCI|NILAI|DEFAULT|DESKRIPSI|
 |-|-|-|-|
-|MOSQUE_API_ENDPOINT|https://api.mosque.tech/mosque-data/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg|REQUIRED - NO DEFAULT|Data from Mosque API|
-|BLACKOUT_PERIOD|13|13 minutes|How long your mosque screen dims / blacks out during congregation prayer|
-|UPCOMING_PRAYER_DAY|3|3 upcoming days shown in slider|How many upcoming days it shows in the sliding section|
-|SLIDE_TRANSITION_TIME|7|7 seconds|How long each slide shows for in the sliding section|
+|MOSQUE_API_ENDPOINT|https://api.mosque.tech/mosque-data/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg|DIWAJIBKAN - TIDAK ADA DEFAULT|Data dari Mosque API|
+|BLACKOUT_PERIOD|13|13 menit|Berapa lama layar masjid Anda redup / mati selama sholat jamaah|
+|UPCOMING_PRAYER_DAY|3|3 hari mendatang ditampilkan di slider|Berapa banyak hari mendatang yang ditampilkan di bagian geser|
+|SLIDE_TRANSITION_TIME|7|7 detik|Berapa lama setiap slide ditampilkan di bagian geser|
 
-## Dev set up
+## Pengaturan Dev
 
 ```sh
 cp .env.local.example .env.local
@@ -136,23 +136,23 @@ npm install
 npm run dev
 ```
 
-## Raspberry Pi Setup
+## Pengaturan Raspberry Pi
 
-Raspberry Pi (RPI) is an easy way to get the screen running, the screen doesn't need too much power - a lightweight computer like an RPI is enough.
+Raspberry Pi (RPI) adalah cara mudah untuk menjalankan layar, layar tidak memerlukan terlalu banyak daya - komputer ringan seperti RPI sudah cukup.
 
-You can buy one from the official suppliers: https://www.raspberrypi.com/products/
+Anda dapat membelinya dari pemasok resmi: https://www.raspberrypi.com/products/
 
-We recommend you buy a case with a fan or some heat-cooling solution - the screen will run all day so it's good to have a good cooling solution.
+Kami sarankan Anda membeli casing dengan kipas atau solusi pendinginan panas - layar akan berjalan sepanjang hari jadi baik untuk memiliki solusi pendinginan yang baik.
 
-### RPI set up steps
+### Langkah-langkah pengaturan RPI
 
-0. Install [Raspberry Pi OS](https://www.raspberrypi.com/software/) on the SD Card
-1. Install [chromium-browser](https://www.chromium.org/getting-involved/download-chromium) - **Do this step only if you do not have Chromium**
-2. Open Terminal
+0. Install [Raspberry Pi OS](https://www.raspberrypi.com/software/) pada Kartu SD
+1. Install [chromium-browser](https://www.chromium.org/getting-involved/download-chromium) - **Lakukan langkah ini hanya jika Anda tidak memiliki Chromium**
+2. Buka Terminal
 3. `cd .config`
 4. `sudo mkdir -p lxsession/LXDE-pi`
 5. `sudo nano lxsession/LXDE-pi/autostart`
-6. Add the following line at the end of the file:
+6. Tambahkan baris berikut di akhir file:
 
 ```sh
 @lxpanel --profile LXDE-pi
@@ -161,13 +161,13 @@ point-rpi
 @chromium-browser --noerrdialogs --noerrors --disable-session-crashed-bubble --disable-features=InfiniteSessionRestore --disable-infobars --start-fullscreen --start-maximized --app=https://mosque-prayer-display-screen.vercel.app
 ```
 
-(make sure to replace the `--app=https://mosque-prayer-display-screen.vercel.app` with your URL)
+(pastikan untuk mengganti `--app=https://mosque-prayer-display-screen.vercel.app` dengan URL Anda)
 
 7. `sudo reboot`
-8. Once it reboots, it should start with start-up to your screen automatically.
+8. Setelah reboot, itu harus mulai dengan start-up ke layar Anda secara otomatis.
 
-## Still need help?
+## Masih butuh bantuan?
 
-We don't provide any free support, you can join our discord channel to get help from the community using the following invite link: [https://discord.gg/CG7frj2](https://discord.gg/CG7frj2).
+Kami tidak menyediakan dukungan gratis, Anda dapat bergabung dengan channel discord kami untuk mendapatkan bantuan dari komunitas menggunakan tautan undangan berikut: [https://discord.gg/CG7frj2](https://discord.gg/CG7frj2).
 
-If you would like paid support, you can contact us here for pricing: [mosque.screens786@gmail.com](mailto:mosque.screens786@gmail.com).
+Jika Anda ingin dukungan berbayar, Anda dapat menghubungi kami di sini untuk harga: [mosque.screens786@gmail.com](mailto:mosque.screens786@gmail.com).

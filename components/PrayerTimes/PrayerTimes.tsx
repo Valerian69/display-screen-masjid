@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { getNextPrayer } from "@/services/PrayerTimeService"
 import { DailyPrayerTime } from "@/types/DailyPrayerTimeType"
 import moment from "moment"
+import { getPrayerName, translations } from "@/constants/translations"
 
 export default function PrayerTimes({
   today,
@@ -15,26 +16,31 @@ export default function PrayerTimes({
   const PrayerTimesArray = [
     {
       label: "Fajr",
+      labelBahasa: getPrayerName("Fajr"),
       data: today.fajr,
       tomorrow: tomorrow.fajr,
     },
     {
       label: "Zuhr",
+      labelBahasa: getPrayerName("Zuhr"),
       data: today.zuhr,
       tomorrow: tomorrow.zuhr,
     },
     {
       label: "Asr",
+      labelBahasa: getPrayerName("Asr"),
       data: today.asr,
       tomorrow: tomorrow.asr,
     },
     {
       label: "Maghrib",
+      labelBahasa: getPrayerName("Maghrib"),
       data: today.maghrib,
       tomorrow: tomorrow.maghrib,
     },
     {
       label: "Isha",
+      labelBahasa: getPrayerName("Isha"),
       data: today.isha,
       tomorrow: tomorrow.isha,
     },
@@ -58,10 +64,10 @@ export default function PrayerTimes({
           md:[&>*]:border [&>*]:border-mosqueGreen-dark
           [&>th]:border-t-0 [&>th:last-of-type]:border-r-0"
         >
-          <th className="sr-only">Prayer time</th>
-          <th className="md:text-5xl">Begins</th>
-          <th className="md:text-5xl">Jama&apos;ah</th>
-          <th className="md:text-5xl">Tomorrow</th>
+          <th className="sr-only">{translations.table.prayerTime}</th>
+          <th className="md:text-5xl">{translations.table.begins}</th>
+          <th className="md:text-5xl">{translations.table.jamaah}</th>
+          <th className="md:text-5xl">{translations.table.tomorrow}</th>
         </tr>
       </thead>
       <tbody>
@@ -80,7 +86,7 @@ export default function PrayerTimes({
               last-of-type:border-b-0"
           >
             <th className="text-left text-xl md:text-5xl md:text-right">
-              {prayer.label}
+              {prayer.labelBahasa}
             </th>
             <td className="text-xl md:text-6xl">
               {moment(prayer.data.start, ["HH:mm"]).format("h:mm")}

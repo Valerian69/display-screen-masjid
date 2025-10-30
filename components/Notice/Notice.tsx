@@ -21,7 +21,7 @@ export default function Notice() {
       </div>
       <div>
         <p className="italic text-xl md:text-2xl md:max-w-lg hidden md:block">
-          Please ensure your mobile phone is silent in the prayer hall.
+          Mohon pastikan ponsel Anda dalam mode senyap di ruang sholat.
         </p>
       </div>
     </div>

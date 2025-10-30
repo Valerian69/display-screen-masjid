@@ -1,5 +1,6 @@
 import { UpcomingPrayerTimes } from "@/types/DailyPrayerTimeType"
 import moment from "moment"
+import { getPrayerName, translations } from "@/constants/translations"
 
 export default function UpcomingPrayerDayTiles({
   times,
@@ -12,7 +13,7 @@ export default function UpcomingPrayerDayTiles({
     >
       <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 lg:col-auto">
         <dt className="text-sm lg:text-2xl font-medium">
-          Jama&apos;ah times for
+          {translations.labels.jamaahTimesFor}
         </dt>
         <dd className="mt-2 text-xl lg:text-3xl font-bold tracking-tight">
           {times.display_date}
@@ -20,7 +21,7 @@ export default function UpcomingPrayerDayTiles({
       </div>
       <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 lg:col-auto">
         <dt className="text-sm lg:text-2xl font-medium">
-          Fajr ({times.display_day_label})
+          {getPrayerName("Fajr")} ({times.display_day_label})
         </dt>
         <dd className="mt-2 text-xl lg:text-3xl font-bold tracking-tight">
           {moment(times.fajr.congregation_start, ["HH:mm"]).format("h:mm")}
@@ -28,7 +29,7 @@ export default function UpcomingPrayerDayTiles({
       </div>
       <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 lg:col-auto">
         <dt className="text-sm lg:text-2xl font-medium">
-          Zuhr ({times.display_day_label})
+          {getPrayerName("Zuhr")} ({times.display_day_label})
         </dt>
         <dd className="mt-2 text-xl lg:text-3xl font-bold tracking-tight">
           {moment(times.zuhr.congregation_start, ["HH:mm"]).format("h:mm")}
@@ -36,7 +37,7 @@ export default function UpcomingPrayerDayTiles({
       </div>
       <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 lg:col-auto">
         <dt className="text-sm lg:text-2xl font-medium">
-          Asr ({times.display_day_label})
+          {getPrayerName("Asr")} ({times.display_day_label})
         </dt>
         <dd className="mt-2 text-xl lg:text-3xl font-bold tracking-tight">
           {moment(times.asr.congregation_start, ["HH:mm"]).format("h:mm")}
@@ -44,7 +45,7 @@ export default function UpcomingPrayerDayTiles({
       </div>
       <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 lg:col-auto">
         <dt className="text-sm lg:text-2xl font-medium">
-          Maghrib ({times.display_day_label})
+          {getPrayerName("Maghrib")} ({times.display_day_label})
         </dt>
         <dd className="mt-2 text-xl lg:text-3xl font-bold tracking-tight">
           {moment(times.maghrib.congregation_start, ["HH:mm"]).format("h:mm")}
@@ -52,7 +53,7 @@ export default function UpcomingPrayerDayTiles({
       </div>
       <div className="bg-mosqueGreen-dark text-white p-4 lg:p-6 lg:col-auto">
         <dt className="text-sm lg:text-2xl font-medium">
-          Isha ({times.display_day_label})
+          {getPrayerName("Isha")} ({times.display_day_label})
         </dt>
         <dd className="mt-2 text-xl lg:text-3xl font-bold tracking-tight">
           {moment(times.isha.congregation_start, ["HH:mm"]).format("h:mm")}
