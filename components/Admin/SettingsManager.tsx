@@ -44,7 +44,14 @@ export default function SettingsManager({ config, onUpdate }: SettingsManagerPro
         upcomingPrayerDays: 3,
         autoRefreshInterval: 60,
         displayMode: 'tv' as const,
-        language: 'id' as const
+        language: 'id' as const,
+        marqueeAnimation: {
+          animationDuration: 60,
+          fontSize: 'medium' as const,
+          backgroundColor: 'bg-blue-900',
+          textColor: 'text-white',
+          pauseOnHover: true
+        }
       }
       setSettings(defaultSettings)
     }

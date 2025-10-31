@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { MosqueConfig } from '@/types/AdminTypes'
 
 interface MosqueInfoFormProps {
@@ -129,10 +130,12 @@ export default function MosqueInfoForm({ config, onUpdate }: MosqueInfoFormProps
             <div className="bg-gray-50 p-4 rounded-lg">
               <div className="flex items-center space-x-4">
                 {formData.logo_url && (
-                  <img
+                  <Image
                     src={formData.logo_url}
                     alt="Logo masjid"
-                    className="w-16 h-16 object-contain"
+                    width={64}
+                    height={64}
+                    className="object-contain"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none'
                     }}

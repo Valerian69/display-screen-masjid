@@ -55,9 +55,9 @@ export class MyQuranService {
           const now = Date.now()
 
           // Use cache if it's less than 24 hours old
-          if (now - cacheTime < 24 * 60 * 60 * 1000) {
+          if (now - cacheTime < 24 * 60 * 60 * 1000 && parsed.cities) {
             this.cityCache = parsed.cities
-            return this.cityCache
+            return parsed.cities
           }
         } catch (error) {
           console.error('Error parsing cached cities:', error)

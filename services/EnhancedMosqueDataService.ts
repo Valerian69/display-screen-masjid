@@ -303,10 +303,10 @@ export class EnhancedMosqueDataService {
       } catch (error) {
         console.error('Error getting prayer times from MyQuran API:', error)
         // Fallback to Indonesian calculator
-        return this.getIndonesianPrayerTimes()
+        return await this.getIndonesianPrayerTimes()
       }
     } else if (this.useIndonesianAPI) {
-      return this.getIndonesianPrayerTimes()
+      return await this.getIndonesianPrayerTimes()
     } else {
       try {
         const { prayer_times } = await this.getOriginalMosqueData()
@@ -318,11 +318,11 @@ export class EnhancedMosqueDataService {
     }
   }
 
-  private getIndonesianPrayerTimes(): DailyPrayerTime[] {
+  private async getIndonesianPrayerTimes(): Promise<DailyPrayerTime[]> {
     try {
       const config = adminService.getMosqueConfig('default-mosque')
       const now = moment()
-      const prayerTimes = indonesianPrayerService.getMonthlyPrayerTimes(
+      const prayerTimes = await indonesianPrayerService.getMonthlyPrayerTimes(
         config.cityId || 'jakarta',
         now.year(),
         now.month() + 1
