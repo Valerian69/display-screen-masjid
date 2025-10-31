@@ -8,7 +8,7 @@ Proyek ini telah bersumber terbuka sebagai bentuk sedekah jariyah - semoga Allah
 
 ## Pendahuluan
 
-Aplikasi ini memungkinkan masjid untuk menjalankan layar display sholat untuk para jamaah dan juga aplikasi web progresif offline yang berjalan di browser modern mana pun.
+Aplikasi layar display sholat masjid modern dengan dukungan penuh Bahasa Indonesia, sistem admin yang komprehensif, dan integrasi API MyQuran untuk waktu sholat akurat di seluruh Indonesia. Aplikasi ini berjalan sebagai aplikasi web progresif offline yang kompatibel dengan browser modern.
 
 Versi aplikasi ini menggantikan [versi asli](https://github.com/Mosque-Screens/Mosque-Screen) yang dibuat bersama dengan [East London Mosque](https://www.eastlondonmosque.org.uk/).
 
@@ -19,6 +19,42 @@ Kontributor asli proyek ini dapat ditemukan [di sini](https://github.com/Mosque-
 Terima kasih khusus harus diberikan kepada [UK Government Digital Service](https://www.gov.uk/government/organisations/government-digital-service) yang menyediakan hari-hari sukarela yang memungkinkan proyek asli menjadi kenyataan.
 
 ## Fitur
+
+### 🇮🇩 **Bahasa Indonesia Penuh**
+- Seluruh antarmuka dalam Bahasa Indonesia
+- Nama sholat dalam bahasa Arab dan Indonesia
+- Format tanggal Hijriyah dan Masehi
+
+### 🕌 **Integrasi API MyQuran**
+- Waktu sholat akurat untuk 347+ kota di Indonesia
+- Data langsung dari api.myquran.com/v2
+- Pemilihan kota dinamis melalui panel admin
+- Update otomatis dan cache sistem
+
+### ⚙️ **Panel Admin Modern**
+- Login aman dengan session management
+- Pengaturan informasi masjid (nama, alamat, logo)
+- Sistem pengumuman dengan running text
+- Pemilihan lokasi/kota dari 347+ pilihan
+- Pengaturan tampilan dan animasi
+- Perubahan real-time langsung ke layar utama
+
+### 📱 **Responsive Design**
+- Tampilan optimal untuk TV Full HD 1080p
+- Mode TV dan mobile yang responsif
+- Progressive Web App (PWA) support
+- Offline functionality
+
+### 📢 **Sistem Pengumuman**
+- Running text marquee yang dapat dikustomisasi
+- Animasi, warna, dan ukuran teks fleksibel
+- Multiple pengumuman dengan manajemen mudah
+- Integrasi real-time dengan layar display
+
+### ⚡ **Real-time Updates**
+- Perubahan admin langsung terlihat di layar utama
+- Custom event system untuk sinkronisasi data
+- Cache management yang optimal
 
 Untuk melacak fitur yang diimplementasikan dan dalam jalur pipa, silakan lihat papan proyek kami:
 https://github.com/orgs/MosqueOS/projects/1/views/1
@@ -51,58 +87,97 @@ Semua kode ada di sini:
 
 ### Prasyarat
 
-- Akun Google
+- Node.js (versi 18 atau lebih tinggi)
+- npm atau yarn
+- Browser modern dengan dukungan JavaScript
 
-### Langkah 1: Buat salinan spreadsheet waktu sholat
+### Pengaturan Cepat (Development)
 
-Buka tautan berikut dan buat salinan spreadsheet:
-[https://docs.google.com/spreadsheets/d/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg/copy](https://docs.google.com/spreadsheets/d/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg/copy).
+#### Langkah 1: Clone Repository
 
-### Langkah 2: Bagikan akses "viewer" ke spreadsheet dengan Akun Google kami
-
-Klik tombol bagikan dan tambahkan `mosque.screens786@gmail.com` sebagai viewer. Kami tidak memerlukan akses tulis, jadi mohon jangan berikan kami ini.
-
-Ini memungkinkan API kami mengakses spreadsheet Anda dan membaca data Anda.
-
-### Langkah 3: Hasilkan API Endpoint
-
-Untuk menghasilkan API endpoint, Anda perlu mengekstrak ID spreadsheet dari tautan spreadsheet Anda.
-
-Misalnya, jika URL spreadsheet Anda adalah:
-
-```
-https://docs.google.com/spreadsheets/d/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg/edit
+```bash
+git clone https://github.com/your-username/display-screen-masjid.git
+cd display-screen-masjid
 ```
 
-ID Anda akan menjadi:
+#### Langkah 2: Install Dependencies
 
-```
-1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg
-```
-
-Anda kemudian menambahkan ID ini ke URL berikut, seperti ini:
-
-```
-https://api.mosque.tech/mosque-data/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg
+```bash
+npm install
 ```
 
-Anda dapat menggunakan alat berikut untuk secara otomatis menghasilkan API endpoint:
-https://codepen.io/DilwoarH/full/mdvOexr
+#### Langkah 3: Jalankan Development Server
 
-Catatan: Anda tidak perlu menggunakan API endpoint kami, Anda dapat menghasilkan endpoint Anda sendiri tetapi pastikan memiliki semua properti yang diperlukan.
+```bash
+npm run dev
+```
 
-### Langkah 4: Deploy aplikasi Anda
+Aplikasi akan berjalan di `http://localhost:3001` (atau port lain jika 3001 digunakan).
 
-Kami saat ini menggunakan Vercel (kami menemukan yang lain tidak berfungsi dengan baik).
+### Pengaturan Panel Admin
 
-Klik tombol berikut:
+1. **Buka Panel Admin**: Kunjungi `http://localhost:3001/admin`
+2. **Login**: Gunakan kredensial default:
+   - Username: `admin`
+   - Password: `admin123`
+   - **Penting**: Ganti password ini di production!
+3. **Konfigurasi Masjid**:
+   - Buka tab "Informasi Masjid" untuk mengubah nama dan alamat
+   - Buka tab "Pilih Lokasi Masjid" untuk memilih kota Anda
+   - Buka tab "Pengumuman" untuk mengelola pengumuman running text
+   - Buka tab "Pengaturan" untuk menyesuaikan tampilan
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMosqueOS%2FMosque-Prayer-Display-Screen&env=MOSQUE_API_ENDPOINT&envDescription=The%20Mosque%20API%20Key%20can%20be%20generated%20by%20following%20the%20README%20documents&envLink=https%3A%2F%2Fgithub.com%2FMosqueOS%2FMosque-Prayer-Display-Screen&project-name=mosque-prayer-display-screen&repository-name=Mosque-Prayer-Display-Screen)
+### Integrasi API MyQuran
 
-### Langkah 5: Uji display Anda
+Aplikasi sudah terintegrasi dengan API MyQuran untuk waktu sholat otomatis:
+- **347+ kota tersedia** di seluruh Indonesia
+- Data tersimpan dalam cache 24 jam untuk performa
+- Update otomatis tanpa konfigurasi manual
 
-Setelah aplikasi Anda dideploy, kunjungi URL dan uji layar Anda.
-Pastikan berfungsi di TV yang ingin Anda gunakan untuk masjid. Aplikasi kami dirancang untuk layar TV Full HD 1080p.
+**Catatan**: Tidak diperlukan setup spreadsheet atau API endpoint manual seperti versi sebelumnya.
+
+### Deploy ke Production
+
+#### Opsi 1: Vercel (Recommended)
+
+1. **Push ke GitHub**:
+   ```bash
+   git add .
+   git commit -m "Initial setup of mosque display system"
+   git push origin main
+   ```
+
+2. **Deploy ke Vercel**:
+   - Kunjungi [vercel.com](https://vercel.com)
+   - Import repository GitHub Anda
+   - Vercel akan otomatis mendeteksi ini sebagai aplikasi Next.js
+   - Klik "Deploy"
+
+#### Opsi 2: Build Manual
+
+```bash
+# Build untuk production
+npm run build
+
+# Jalankan production server
+npm start
+```
+
+### Langkah 4: Uji display Anda
+
+Setelah aplikasi Anda dideploy:
+1. **Uji tampilan utama** di `http://your-domain.com`
+2. **Uji panel admin** di `http://your-domain.com/admin`
+3. **Pastikan berfungsi di TV** yang akan digunakan untuk masjid
+4. **Aplikasi dioptimalkan untuk layar TV Full HD 1080p**
+
+### Konfigurasi Production
+
+**PENTING**: Sebelum production, pastikan untuk:
+- Ganti default admin password (`admin123`)
+- Konfigurasi kota lokasi masjid Anda
+- Sesuaikan nama dan alamat masjid
+- Atur pengumuman yang diinginkan
 
 ### Hal opsional yang mungkin ingin Anda lakukan
 
@@ -117,10 +192,46 @@ Jika Anda ingin memperbarui domain Anda, Anda dapat melakukannya dengan mengikut
 
 |KUNCI|NILAI|DEFAULT|DESKRIPSI|
 |-|-|-|-|
-|MOSQUE_API_ENDPOINT|https://api.mosque.tech/mosque-data/1o9dngtGJbfkFGZK_M7xdlo2PtRuQknGEQU3FxpiPVbg|DIWAJIBKAN - TIDAK ADA DEFAULT|Data dari Mosque API|
-|BLACKOUT_PERIOD|13|13 menit|Berapa lama layar masjid Anda redup / mati selama sholat jamaah|
+|NEXT_PUBLIC_APP_URL|http://localhost:3001|http://localhost:3001|URL dasar aplikasi|
 |UPCOMING_PRAYER_DAY|3|3 hari mendatang ditampilkan di slider|Berapa banyak hari mendatang yang ditampilkan di bagian geser|
 |SLIDE_TRANSITION_TIME|7|7 detik|Berapa lama setiap slide ditampilkan di bagian geser|
+
+**Catatan**: Versi ini tidak memerlukan `MOSQUE_API_ENDPOINT` karena menggunakan API MyQuran langsung.
+
+### 🏗️ **Struktur Proyek**
+
+```
+display-screen-masjid/
+├── app/                    # Next.js App Router
+│   ├── admin/             # Panel admin routes
+│   ├── login/             # Login page
+│   └── page.tsx           # Main display page
+├── components/            # React components
+│   ├── Admin/            # Admin panel components
+│   ├── AnnouncementMarquee/
+│   ├── Blackout/
+│   ├── Clock/
+│   ├── PrayerTimes/
+│   └── ...
+├── services/             # API services
+│   ├── MyQuranService.ts    # MyQuran API integration
+│   ├── AdminService.ts      # Admin authentication & data
+│   └── EnhancedMosqueDataService.ts
+├── types/                # TypeScript type definitions
+├── constants/            # Constants dan translations
+└── public/              # Static assets
+```
+
+### 🔧 **Teknologi yang Digunakan**
+
+- **Framework**: Next.js 15 dengan App Router
+- **Bahasa**: TypeScript
+- **Styling**: Tailwind CSS
+- **API**: MyQuran API (api.myquran.com/v2)
+- **State Management**: React Hooks + Custom Events
+- **Authentication**: LocalStorage dengan session management
+- **Cache**: localStorage dengan 24-hour expiry
+- **PWA**: Service Worker support
 
 ## Pengaturan Dev
 
@@ -166,8 +277,81 @@ point-rpi
 7. `sudo reboot`
 8. Setelah reboot, itu harus mulai dengan start-up ke layar Anda secara otomatis.
 
+## 🚨 **Keamanan**
+
+### Production Security Checklist
+
+- [ ] Ganti default admin password (`admin123`)
+- [ ] Gunakan HTTPS di production
+- [ ] Validasi input di panel admin
+- [ ] Rate limiting untuk API calls
+- [ ] Regular security updates
+
+### Admin Credentials Default
+
+**⚠️ HANYA UNTUK DEVELOPMENT ⚠️**
+- Username: `admin`
+- Password: `admin123`
+
+**PENTING**: Selalu ganti password default di production environment!
+
+## 🛠️ **Troubleshooting**
+
+### Masalah Umum
+
+#### City changes tidak terlihat di main page
+- **Solusi**: Refresh browser dan buka console untuk debugging logs
+- **Check**: Pastikan tidak ada error JavaScript di console
+
+#### API MyQuran tidak responsif
+- **Solusi**: Tunggu 24 jam untuk cache reset atau clear browser cache
+- **Check**: Koneksi internet harus stabil
+
+#### Admin panel tidak bisa login
+- **Solusi**: Clear localStorage dan refresh browser
+- **Check**: Username dan password yang benar
+
+#### Blank page atau error
+- **Solusi**: Check browser console untuk error details
+- **Check**: Pastikan Node.js versi 18+ terinstall
+
+### Debug Mode
+
+Aktifkan debug logging dengan membuka browser developer console. Logs akan menampilkan:
+- City ID yang digunakan untuk API calls
+- Cache status
+- Error details jika ada
+
+## 🤝 **Kontribusi**
+
+Kontribusi sangat welcome! Silakan:
+1. Fork repository
+2. Buat feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push ke branch (`git push origin feature/amazing-feature`)
+5. Buka Pull Request
+
+### Development Guidelines
+
+- Gunakan TypeScript untuk type safety
+- Follow existing code style
+- Add logging untuk debugging
+- Test di multiple browsers
+
+## 📄 **License**
+
+Proyek ini dilisensikan di bawah MIT License - lihat file [LICENSE](LICENSE) untuk details.
+
 ## Masih butuh bantuan?
 
-Kami tidak menyediakan dukungan gratis, Anda dapat bergabung dengan channel discord kami untuk mendapatkan bantuan dari komunitas menggunakan tautan undangan berikut: [https://discord.gg/CG7frj2](https://discord.gg/CG7frj2).
+### Dukungan Komunitas
+- Bergabung dengan channel Discord kami: [https://discord.gg/CG7frj2](https://discord.gg/CG7frj2)
+- Ajukan issue di GitHub untuk bug reports dan feature requests
 
-Jika Anda ingin dukungan berbayar, Anda dapat menghubungi kami di sini untuk harga: [mosque.screens786@gmail.com](mailto:mosque.screens786@gmail.com).
+### Dukungan Berbayar
+Untuk dukungan berbayar dan setup kustom, hubungi:
+- Email: [mosque.screens786@gmail.com](mailto:mosque.screens786@gmail.com)
+
+---
+
+**💡 Tips**: Simpan link README ini untuk referensi setup dan maintenance masa depan.

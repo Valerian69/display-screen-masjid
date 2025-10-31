@@ -1,5 +1,5 @@
 import Calendar from "@/components/Calendar/Calendar"
-import { getAllPrayerTimes, getMetaData } from "@/services/MosqueDataService"
+import { getAllPrayerTimes, getMetaData } from "@/services/EnhancedMosqueDataService"
 import { MosqueMetadataType } from "@/types/MosqueDataType"
 import { Metadata } from "next"
 import { translations } from "@/constants/translations"

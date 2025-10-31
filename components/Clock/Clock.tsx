@@ -5,11 +5,11 @@ import { useEffect, useState } from "react"
 
 export default function Clock({ darkMode = false }: { darkMode?: boolean }) {
   const format = "h:mm A"
-  const [time, setTime] = useState(moment().format(format))
+  const [time, setTime] = useState(moment().locale("en").format(format))
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(moment().format(format))
+      setTime(moment().locale("en").format(format))
     }, 1000)
 
     return () => clearInterval(interval)
